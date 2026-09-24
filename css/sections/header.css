@@ -1,0 +1,124 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-card);
+  padding: 1rem 2rem;
+  transition: border-color var(--transition-normal);
+}
+
+.header-container {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.logo-code {
+  color: var(--primary);
+  font-family: var(--font-code);
+  font-weight: 700;
+}
+
+.logo-initials {
+  font-family: var(--font-code);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.header-social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-social-icon {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.header-social-icon:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Right-side control group: social icons + theme controls + mobile toggle */
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.icon-control-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.icon-control-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.nav-toggle-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  font-size: 1rem;
+}

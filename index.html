@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan-purple">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] | Graphic Designer & Visual Creative</title>
+
+    <!-- Apply saved theme/mode before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('zk-portfolio-theme');
+          var savedMode = localStorage.getItem('zk-portfolio-mode');
+          if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+          if (savedMode === 'light') document.documentElement.classList.add('light-mode');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/header.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/whyChooseMe.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/skills.css">
+    <link rel="stylesheet" href="css/sections/education.css">
+    <link rel="stylesheet" href="css/sections/experience.css">
+    <link rel="stylesheet" href="css/sections/projects.css">
+    <link rel="stylesheet" href="css/sections/certifications.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
+    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive/desktop.css">
+    <link rel="stylesheet" href="css/responsive/tablet.css">
+    <link rel="stylesheet" href="css/responsive/mobile.css">
+</head>
+<body>
+    <!-- HEADER MOUNT -->
+    <header id="header-root" class="site-header"></header>
+
+    <!-- MAIN VIEW MOUNT -->
+    <main id="main-root">
+        <section id="hero-mount" class="section-wrapper"></section>
+        <section id="why-mount" class="section-wrapper"></section>
+        <section id="about-mount" class="section-wrapper"></section>
+        <section id="skills-mount" class="section-wrapper"></section>
+        <section id="education-mount" class="section-wrapper"></section>
+        <section id="experience-mount" class="section-wrapper"></section>
+        <section id="projects-mount" class="section-wrapper"></section>
+        <section id="certifications-mount" class="section-wrapper"></section>
+        <section id="languages-mount" class="section-wrapper"></section>
+        <section id="contact-mount" class="section-wrapper"></section>
+        
+    </main>
+
+    <!-- FOOTER MOUNT -->
+    <footer id="footer-root" class="site-footer"></footer>
+
+    <!-- Entry JS -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

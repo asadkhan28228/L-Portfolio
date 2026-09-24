@@ -1,0 +1,38 @@
+.site-footer {
+  border-top: 1px solid var(--border-card);
+  background: var(--bg-secondary);
+  padding: 2.5rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.back-to-top-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.back-to-top-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}

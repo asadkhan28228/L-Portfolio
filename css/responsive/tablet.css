@@ -1,0 +1,42 @@
+/* Tablets & iPads (640px - 1199px) */
+@media (max-width: 1199px) and (min-width: 640px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .about-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

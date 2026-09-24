@@ -1,0 +1,147 @@
+.languages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.languages-row-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem 2rem;
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.7s ease-out,
+              transform 0.7s ease-out,
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+/* Initial state: odd rows slide from left, even rows slide from right */
+.languages-container .languages-row-card:nth-child(odd) {
+  transform: translateX(-40px);
+}
+
+.languages-container .languages-row-card:nth-child(even) {
+  transform: translateX(40px);
+}
+
+/* When section scrolls into view */
+.languages-container.in-view .languages-row-card {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Stagger delays for cascading waterfall effect */
+.languages-container.in-view .languages-row-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.languages-container.in-view .languages-row-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+/* Hover states */
+.languages-row-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--border-card-hover);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.08);
+}
+
+/* Column general styles */
+.language-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Column content */
+.language-left {
+  gap: 0.3rem;
+}
+
+.language-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.language-proficiency {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Middle Column placeholder */
+.language-middle {
+  gap: 0.3rem;
+  justify-content: center;
+}
+
+/* Right Column content (Circular Badge Ring) */
+.language-right {
+  align-items: flex-end;
+}
+
+.languages-circular-badge {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.languages-svg-ring {
+  width: 100%;
+  height: 100%;
+}
+
+.languages-container .ring-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 3.2;
+}
+
+.languages-container .ring-progress {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1s ease-out;
+}
+
+.languages-container .ring-text {
+  fill: var(--text-main);
+  font-size: 7px;
+  font-weight: 700;
+  text-anchor: middle;
+  transform: none;
+  transform-origin: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+  .languages-row-card {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .language-right {
+    align-items: flex-start;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .languages-row-card,
+  .languages-container .languages-row-card:nth-child(odd),
+  .languages-container .languages-row-card:nth-child(even) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

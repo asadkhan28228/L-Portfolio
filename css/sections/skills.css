@@ -1,0 +1,171 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills-category-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  border-left: 3px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-bar-card,
+.additional-expertise-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity 0.7s ease-out, 
+              transform 0.7s ease-out, 
+              border-color var(--transition-fast), 
+              box-shadow var(--transition-fast);
+}
+
+/* Initial state: left cards from left, right cards from right */
+.skills-grid .skill-bar-card:nth-child(odd) {
+  transform: translateX(-40px);
+}
+
+.skills-grid .skill-bar-card:nth-child(even) {
+  transform: translateX(40px);
+}
+
+.additional-expertise-box {
+  transform: translateY(30px);
+}
+
+/* When the section scrolls into view */
+.skills-container.in-view .skill-bar-card,
+.skills-container.in-view .additional-expertise-box {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Stagger delays */
+.skills-container.in-view .skills-grid .skill-bar-card:nth-child(1) { transition-delay: 0.1s; }
+.skills-container.in-view .skills-grid .skill-bar-card:nth-child(2) { transition-delay: 0.2s; }
+.skills-container.in-view .skills-grid .skill-bar-card:nth-child(3) { transition-delay: 0.3s; }
+.skills-container.in-view .skills-grid .skill-bar-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Hover states */
+.skill-bar-card:hover,
+.additional-expertise-box:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--border-card-hover);
+}
+
+.skill-bar-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.skill-name-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.skill-icon {
+  color: var(--primary);
+}
+
+.bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 1s ease-out;
+}
+
+.additional-expertise-box {
+  padding: 2rem;
+  border-radius: var(--radius-md);
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* --- Additional Expertise pills: sequential one-by-one reveal --- */
+.tag-pill {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  border: 1px solid var(--border-card-hover); /* starts tinted with the accent glow */
+
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.6s ease-out,
+              color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.skills-container.in-view .tag-pill {
+  opacity: 1;
+  transform: translateY(0);
+  border-color: var(--border-card); /* settles back to the normal border after appearing */
+}
+
+/* Each pill reveals ~0.08s after the previous one */
+.skills-container.in-view .tag-pill:nth-child(1)  { transition-delay: 0.30s; }
+.skills-container.in-view .tag-pill:nth-child(2)  { transition-delay: 0.38s; }
+.skills-container.in-view .tag-pill:nth-child(3)  { transition-delay: 0.46s; }
+.skills-container.in-view .tag-pill:nth-child(4)  { transition-delay: 0.54s; }
+.skills-container.in-view .tag-pill:nth-child(5)  { transition-delay: 0.62s; }
+.skills-container.in-view .tag-pill:nth-child(6)  { transition-delay: 0.70s; }
+.skills-container.in-view .tag-pill:nth-child(7)  { transition-delay: 0.78s; }
+.skills-container.in-view .tag-pill:nth-child(8)  { transition-delay: 0.86s; }
+.skills-container.in-view .tag-pill:nth-child(9)  { transition-delay: 0.94s; }
+.skills-container.in-view .tag-pill:nth-child(10) { transition-delay: 1.02s; }
+.skills-container.in-view .tag-pill:nth-child(11) { transition-delay: 1.10s; }
+.skills-container.in-view .tag-pill:nth-child(12) { transition-delay: 1.18s; }
+
+.tag-pill:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-bar-card,
+  .additional-expertise-box,
+  .tag-pill {
+    opacity: 1;
+    transform: none;
+    border-color: var(--border-card);
+    transition: none;
+  }
+}

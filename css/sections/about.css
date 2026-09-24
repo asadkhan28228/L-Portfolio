@@ -1,0 +1,163 @@
+.about-main-card,
+.quick-facts-card,
+.story-card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+/* Alternate sliding from left and right */
+.about-main-card,
+.my-story-grid .story-card:nth-child(odd) {
+  transform: translateX(-80px) scale(0.95);
+}
+
+.quick-facts-card,
+.my-story-grid .story-card:nth-child(even) {
+  transform: translateX(80px) scale(0.95);
+}
+
+/* When the section scrolls into view */
+.about-grid-layout.in-view .about-main-card,     /* Muhammad Zahid Khan + bio */
+.about-grid-layout.in-view .quick-facts-card,    /* Quick Facts */
+.my-story-grid.in-view .story-card {             /* Who I Am / Education / Experience / Achievements */
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Stagger the animation delay for each card */
+.about-grid-layout.in-view .about-main-card { transition-delay: 0.1s; }
+.about-grid-layout.in-view .quick-facts-card { transition-delay: 0.2s; }
+
+.my-story-grid.in-view .story-card:nth-child(1) { transition-delay: 0.1s; } /* Who I Am */
+.my-story-grid.in-view .story-card:nth-child(2) { transition-delay: 0.2s; } /* Education & Background */
+.my-story-grid.in-view .story-card:nth-child(3) { transition-delay: 0.3s; } /* Experience */
+.my-story-grid.in-view .story-card:nth-child(4) { transition-delay: 0.4s; } /* Achievements */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-main-card,
+  .quick-facts-card,
+  .story-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.about-grid-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.about-main-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.about-name-heading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-bio-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.quick-facts-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.quick-facts-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-card);
+  font-size: 0.95rem;
+}
+
+.fact-label {
+  color: var(--text-muted);
+}
+
+.fact-value {
+  color: var(--text-main);
+  font-weight: 600;
+  text-align: right;
+}
+
+.my-story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.story-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.story-card:hover {
+  border-color: var(--border-card-hover);
+}
+
+.story-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.story-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.story-bullet-item {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.story-bullet-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}

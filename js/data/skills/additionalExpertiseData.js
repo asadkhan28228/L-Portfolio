@@ -1,0 +1,22 @@
+export const additionalExpertiseData = [
+  "Logo Design",
+  "Brand Identity",
+  "Social Media Creatives",
+  "Poster Design",
+  "Flyer Design",
+  "Business Cards",
+  "Packaging Design",
+  "Presentation Design",
+  "Photo Retouching",
+  "Typography",
+  "Color Theory",
+  "Layout Design",
+  "Figma",
+  "Adobe Photoshop",
+  "Adobe Illustrator",
+  "Adobe InDesign",
+  "Canva",
+  "Print Design",
+  "Digital Marketing Creatives",
+  "Creative Direction"
+];

@@ -1,0 +1,92 @@
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Initial hidden state with scale and vertical offset */
+.cert-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color var(--transition-fast), 
+              box-shadow var(--transition-fast);
+}
+
+/* Alternate sliding from left (odd) and right (even) like your About section */
+.certifications-grid .cert-card:nth-child(odd) {
+  transform: translateX(-60px) translateY(20px) scale(0.95);
+}
+
+.certifications-grid .cert-card:nth-child(even) {
+  transform: translateX(60px) translateY(20px) scale(0.95);
+}
+
+/* When the certifications grid scrolls into view */
+.certifications-grid.in-view .cert-card {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Stagger delays for cascading waterfall effect */
+.certifications-grid.in-view .cert-card:nth-child(1) { transition-delay: 0.1s; }
+.certifications-grid.in-view .cert-card:nth-child(2) { transition-delay: 0.2s; }
+.certifications-grid.in-view .cert-card:nth-child(3) { transition-delay: 0.3s; }
+.certifications-grid.in-view .cert-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Hover states */
+.cert-card:hover {
+  border-color: var(--border-card-hover);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.08);
+}
+
+.cert-badge-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 242, 254, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.cert-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.cert-issuer {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.cert-date {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  font-family: var(--font-code);
+  margin-top: auto;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .cert-card,
+  .certifications-grid .cert-card:nth-child(odd),
+  .certifications-grid .cert-card:nth-child(even) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

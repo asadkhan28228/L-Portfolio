@@ -1,0 +1,28 @@
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) {
+  .section-wrapper {
+    padding: 5rem 2rem;
+  }
+
+  .hero-container {
+    gap: 4rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .find-me-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
