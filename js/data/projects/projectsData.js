@@ -19,7 +19,7 @@ export const projectsData = [
   },
   {
     title: "Marketing & Print Design",
-    image: "./assets/images/projects",
+    image: "./assets/images/projects/Crumble.png",
     description:
   "A visually engaging cookie advertisement designed with warm tones, bold typography, and appetizing product imagery. The layout uses strong visual hierarchy to keep the cookies as the main focus while maintaining a balanced composition. Creative branding elements and thoughtful spacing enhance the overall presentation. The design delivers a modern, attractive, and professional advertising look."
   },
