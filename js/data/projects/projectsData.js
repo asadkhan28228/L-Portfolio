@@ -9,41 +9,41 @@ export const projectsData = [
     title: "Cheezious Pizza Design",
     image: "./assets/images/projects/cheezious.jpg",
     description:
-  "A delicious pizza experience loaded with rich flavors, premium toppings, and irresistible cheesy goodness, crafted to satisfy every craving with every bite."
+  "A delicious pizza experience loaded with rich flavors, and irresistible cheesy goodness, crafted to satisfy every craving with every bite. Fresh ingredients and flavors come together to create the perfect pizza experience. Every slice is made to bring more cheese, more taste, and more happiness."
   },
   {
-    title: "Marketing & Print Design",
+    title: "Headphone Advertisement Design",
     image: "./assets/images/projects/Music.jpg",
-    description:
-      "Professional marketing and print visuals combining strong typography, balanced layouts, and impactful creative elements."
+   description:
+  "A modern headphone advertisement designed with clean typography, balanced spacing, and a minimal visual style. The layout highlights the product through a clear visual hierarchy. Green accents and music-inspired elements create a fresh and engaging look."
   },
   {
     title: "Marketing & Print Design",
-    image: "./assets/images/projects/marketing-print.jpg",
+    image: "./assets/images/projects",
     description:
-      "Professional marketing and print visuals combining strong typography, balanced layouts, and impactful creative elements."
+  "A visually engaging cookie advertisement designed with warm tones, bold typography, and appetizing product imagery. The layout uses strong visual hierarchy to keep the cookies as the main focus while maintaining a balanced composition. Creative branding elements and thoughtful spacing enhance the overall presentation. The design delivers a modern, attractive, and professional advertising look."
   },
    {
-    title: "Brand Identity Design",
-    image: "./assets/images/projects/brand-identity.jpg",
-    description:
-      "A modern brand identity created with a strong visual direction, consistent typography, and a distinctive design style."
+    title: "Blood Donation UI Design",
+    image: "./assets/images/projects/blood-ui.png",
+   description:
+  "A modern blood donation platform designed to connect donors with people in need quickly and efficiently. The interface provides easy access to donor search, blood requests, emergency support, and user profiles with a clean and user-friendly experience."
   },
   {
     title: "Social Media Design",
-    image: "./assets/images/projects/social-media.jpg",
+    image: "./assets/images/projects/Thumb-Nail.png",
     description:
-      "Engaging social media creatives designed to capture attention, communicate clearly, and build a consistent brand presence."
+  "Eye-catching thumbnail designs created with bold typography, strong visual hierarchy, vibrant colors, and engaging compositions. Each design grabs attention, communicates the message clearly, and encourages viewers to click while maintaining a professional visual style."
   },
   {
     title: "Marketing & Print Design",
-    image: "./assets/images/projects/marketing-print.jpg",
+    image: "./assets/images/projects/Crumble.png",
     description:
-      "Professional marketing and print visuals combining strong typography, balanced layouts, and impactful creative elements."
+  "A visually engaging cookie advertisement designed with warm tones, bold typography, and appetizing product imagery. The layout uses strong visual hierarchy to keep the cookies as the main focus while maintaining a balanced composition. The design delivers a modern and professional advertising look."
   },
   {
     title: "Marketing & Print Design",
-    image: "./assets/images/projects/marketing-print.jpg",
+    image: "./assets/images/projects/ECMS.png",
     description:
       "Professional marketing and print visuals combining strong typography, balanced layouts, and impactful creative elements."
   }
